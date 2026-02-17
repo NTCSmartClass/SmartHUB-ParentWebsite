@@ -42,7 +42,6 @@ document.addEventListener('DOMContentLoaded', function() {
             e.preventDefault();
             
             // Get form values
-            const formData = new FormData(contactForm);
             const name = contactForm.querySelector('input[type="text"]').value;
             const email = contactForm.querySelector('input[type="email"]').value;
             const message = contactForm.querySelector('textarea').value;
@@ -107,10 +106,8 @@ document.addEventListener('DOMContentLoaded', function() {
     if (footerYear && footerYear.textContent.includes('2026')) {
         footerYear.textContent = footerYear.textContent.replace('2026', currentYear);
     }
-});
 
-// Prevent resource links from navigating (since they're placeholders)
-document.addEventListener('DOMContentLoaded', function() {
+    // Prevent resource links from navigating (since they're placeholders)
     const resourceLinks = document.querySelectorAll('.resource-link');
     resourceLinks.forEach(link => {
         link.addEventListener('click', function(e) {
